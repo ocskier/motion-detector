@@ -1,7 +1,7 @@
 import cv2, os
 from time import sleep
 
-video = cv2.VideoCapture(0)
+video = cv2.VideoCapture(1)
 sleep(1)
 numFrames = 0
 compare = None
@@ -15,7 +15,7 @@ while(True):
     numFrames += 1
     # print(numFrames)
     frame_diff = cv2.absdiff(compare, grey_image)
-    ret,thres_image = cv2.threshold(frame_diff,127,255,cv2.THRESH_BINARY)
+    ret, thres_image = cv2.threshold(frame_diff,127,255,cv2.THRESH_BINARY)
     cv2.imshow("front_cam",grey_image)
     cv2.imshow('frame diff',frame_diff)
     cv2.imshow("thres_diff",thres_image)
